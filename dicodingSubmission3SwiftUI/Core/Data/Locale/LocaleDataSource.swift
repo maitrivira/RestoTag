@@ -33,7 +33,6 @@ final class LocaleDataSource: NSObject {
 extension LocaleDataSource: LocaleDataSourceProtocol {
     
     func getRestaurants() -> Observable<[RestaurantEntity]> {
-        print("get locale")
         return Observable<[RestaurantEntity]>.create { observer in
             if let realm = self.realm {
                 let restaurants: Results<RestaurantEntity> = {
@@ -50,7 +49,6 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
     }
     
     func addRestaurants(from restaurants: [RestaurantEntity]) -> Observable<Bool> {
-        print("get remote")
         return Observable<Bool>.create { observer in
             if let realm = self.realm {
                 do {

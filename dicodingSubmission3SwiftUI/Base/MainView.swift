@@ -20,7 +20,7 @@ struct MainView: View {
                     }
                 FavouriteView()
                     .tabItem {
-                        Label("Favorite", systemImage: "heart.fill")
+                        Label("Favourite", systemImage: "heart.fill")
                     }
                 Searchview()
                     .tabItem {

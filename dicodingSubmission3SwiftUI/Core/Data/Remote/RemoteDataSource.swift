@@ -25,7 +25,6 @@ final class RemoteDataSource: NSObject {
 extension RemoteDataSource: RemoteDataSourceProtocol {
     
     func getRestaurants() -> Observable<[RestaurantResponse]> {
-        print("get remote restaurants")
         return Observable<[RestaurantResponse]>.create { observer in
             if let url = URL(string: Endpoints.Gets.list.url) {
                 AF.request(url)

@@ -9,7 +9,13 @@ import SwiftUI
 
 struct Searchview: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            
+            Text("search")
+            
+        }.onAppear {
+            
+        }.navigationBarTitle("Search", displayMode: .automatic)
     }
 }
 

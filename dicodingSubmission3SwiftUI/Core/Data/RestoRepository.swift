@@ -35,19 +35,8 @@ final class RestoRepository: NSObject {
 extension RestoRepository: RestoRepositoryProtocol {
     
     func getRestaurants() -> Observable<[RestaurantModel]> {
-        print("resto repository")
-        return self.locale.getRestaurants()
-            .map { RestaurantsMapper.mapRestaurantEntitiesToDomains(input: $0) }
-            .filter{ !$0.isEmpty }
-            .ifEmpty(switchTo: self.remote.getRestaurants()
-                        .map { RestaurantsMapper.mapRestaurantResponsesToEntities(input: $0) }
-                        .flatMap { self.locale.addRestaurants(from: $0) }
-                        .filter { $0 }
-                        .flatMap { _ in self.locale.getRestaurants()
-                        .map { RestaurantsMapper.mapRestaurantEntitiesToDomains(input: $0) }
-                        }
-            )
-        
+        return self.remote.getRestaurants()
+            .map { RestaurantsMapper.mapRestaurantResponsesToDomains(input: $0) }
     }
     
 }

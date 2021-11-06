@@ -28,12 +28,10 @@ class RestoPresenter: ObservableObject {
         restoUseCase.getRestaurants()
             .observe(on: MainScheduler.instance)
             .subscribe { result in
-                print("result: ", result)
                 self.restaurants = result
             } onError: { error in
                 self.errorMessage = error.localizedDescription
             } onCompleted: {
-                print("completed")
                 self.loadingState = false
             }.disposed(by: disposeBag)
     }

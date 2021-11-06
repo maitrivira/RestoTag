@@ -32,8 +32,7 @@
 		B0015AD92731A54100B2F657 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0015AD82731A54100B2F657 /* DetailInteractor.swift */; };
 		B030072D2733CF9900053060 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B030072C2733CF9900053060 /* AppComponent.swift */; };
 		B03007302733EB3800053060 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B030072F2733EB3800053060 /* ActivityIndicator.swift */; };
-		B03007322733EF6000053060 /* ListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03007312733EF6000053060 /* ListRow.swift */; };
-		B03007342733F3E900053060 /* ListDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03007332733F3E900053060 /* ListDetail.swift */; };
+		B03007322733EF6000053060 /* RestoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03007312733EF6000053060 /* RestoList.swift */; };
 		B0932CC22732890000359438 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0932CC12732890000359438 /* DetailView.swift */; };
 		B0932CC62732966400359438 /* RestaurantsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0932CC52732966400359438 /* RestaurantsMapper.swift */; };
 		DDAF894D060BA6AE79D647B0 /* Pods_dicodingSubmission3SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 142E410BE0C41C75EFBABFE8 /* Pods_dicodingSubmission3SwiftUI.framework */; };
@@ -69,8 +68,7 @@
 		B0015AD82731A54100B2F657 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		B030072C2733CF9900053060 /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
 		B030072F2733EB3800053060 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
-		B03007312733EF6000053060 /* ListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRow.swift; sourceTree = "<group>"; };
-		B03007332733F3E900053060 /* ListDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetail.swift; sourceTree = "<group>"; };
+		B03007312733EF6000053060 /* RestoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoList.swift; sourceTree = "<group>"; };
 		B0932CC12732890000359438 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		B0932CC52732966400359438 /* RestaurantsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -232,8 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				B0015AAF27318D6800B2F657 /* RestoView.swift */,
-				B03007312733EF6000053060 /* ListRow.swift */,
-				B03007332733F3E900053060 /* ListDetail.swift */,
+				B03007312733EF6000053060 /* RestoList.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -548,7 +545,6 @@
 				B0015AA22731830700B2F657 /* RestoPresenter.swift in Sources */,
 				B0015AB027318D6800B2F657 /* RestoView.swift in Sources */,
 				B0015ACC27319FF400B2F657 /* RestaurantEntity.swift in Sources */,
-				B03007342733F3E900053060 /* ListDetail.swift in Sources */,
 				B0932CC62732966400359438 /* RestaurantsMapper.swift in Sources */,
 				B030072D2733CF9900053060 /* AppComponent.swift in Sources */,
 				B0015ABB2731910E00B2F657 /* APICall.swift in Sources */,
@@ -561,7 +557,7 @@
 				B0015AA7273183DA00B2F657 /* RestoInteractor.swift in Sources */,
 				B0015A8A27317CC500B2F657 /* dicodingSubmission3SwiftUIApp.swift in Sources */,
 				B0015ABD2731932900B2F657 /* RestaurantModel.swift in Sources */,
-				B03007322733EF6000053060 /* ListRow.swift in Sources */,
+				B03007322733EF6000053060 /* RestoList.swift in Sources */,
 				B0015AB427318E5200B2F657 /* FavouriteView.swift in Sources */,
 				B0015AD32731A34900B2F657 /* Injection.swift in Sources */,
 				B0015AD02731A17F00B2F657 /* CustomeError+Ext.swift in Sources */,
