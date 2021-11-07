@@ -9,7 +9,7 @@ import Foundation
 
 protocol DetailUseCase {
     
-    func getRestaurants() -> RestaurantModel
+    func getRestaurant() -> RestaurantModel
     
 }
 
@@ -26,7 +26,7 @@ class DetailInteractor: DetailUseCase {
         self.restaurant = restaurant
     }
     
-    func getRestaurants() -> RestaurantModel {
+    func getRestaurant() -> RestaurantModel {
         return restaurant
     }
     

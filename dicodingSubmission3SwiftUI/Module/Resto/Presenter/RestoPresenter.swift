@@ -37,10 +37,10 @@ class RestoPresenter: ObservableObject {
     }
     
     func linkBuilder<Content: View>(
-        for restaurants: RestaurantModel,
+        for restaurant: RestaurantModel,
         @ViewBuilder content: () -> Content
     ) -> some View {
-        NavigationLink( destination: router.makeDetailView(for: restaurants)) { content() }
+        NavigationLink( destination: router.makeDetailView(for: restaurant)) { content() }
     }
     
 }
