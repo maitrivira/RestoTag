@@ -33,7 +33,7 @@ struct RestaurantDetailResponse: Decodable {
 
 }
 
-struct Categories: Decodable {
+struct Categories: Decodable, Hashable {
     
     private enum CodingKeys: String, CodingKey {
         case name
@@ -43,7 +43,7 @@ struct Categories: Decodable {
     
 }
 
-struct Menus: Decodable {
+struct Menus: Decodable, Hashable {
     
     private enum CodingKeys: String, CodingKey {
         case foods, drinks
@@ -54,7 +54,7 @@ struct Menus: Decodable {
     
 }
 
-struct CustomerReviews: Decodable {
+struct CustomerReviews: Decodable, Hashable {
     
     private enum CodingKeys: String, CodingKey {
         case name, review, date
@@ -66,7 +66,7 @@ struct CustomerReviews: Decodable {
     
 }
 
-struct Foods: Decodable {
+struct Foods: Decodable, Hashable {
     
     private enum CodingKeys: String, CodingKey {
         case name
@@ -76,7 +76,7 @@ struct Foods: Decodable {
     
 }
 
-struct Drinks: Decodable {
+struct Drinks: Decodable, Hashable {
     
     private enum CodingKeys: String, CodingKey {
         case name

@@ -10,6 +10,16 @@ import SwiftUI
 struct MainView: View {
     
     @EnvironmentObject var restoPresenter: RestoPresenter
+    let coloredNavAppearance = UINavigationBarAppearance()
+    init() {
+        UITabBar.appearance().barTintColor = .red
+        coloredNavAppearance.configureWithOpaqueBackground()
+        coloredNavAppearance.backgroundColor = .red
+        coloredNavAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        coloredNavAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().standardAppearance = coloredNavAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = coloredNavAppearance
+    }
     
     var body: some View {
         NavigationView {
@@ -22,11 +32,16 @@ struct MainView: View {
                     .tabItem {
                         Label("Favourite", systemImage: "heart.fill")
                     }
-                Searchview()
+                SearchView()
                     .tabItem {
                         Label("Search", systemImage: "magnifyingglass")
                     }
+                ProfileView()
+                    .tabItem {
+                        Label("Profile", systemImage: "person.fill")
+                    }
             }
+            .accentColor(.white)
         }
     }
 }

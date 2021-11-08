@@ -42,7 +42,7 @@ struct RestoView: View {
                 self.presenter.getRestaurants()
             }
         }
-        .navigationBarTitle("Resto")
+        .navigationBarTitle("Resto", displayMode: .inline)
         
     }
     
