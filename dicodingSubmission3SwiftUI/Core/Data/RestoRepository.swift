@@ -11,6 +11,7 @@ import RxSwift
 protocol RestoRepositoryProtocol {
     
     func getRestaurants() -> Observable<[RestaurantModel]>
+    func getDetailRestaurant(of id: String) -> Observable<RestaurantDetailModel>
     
 }
 
@@ -37,6 +38,12 @@ extension RestoRepository: RestoRepositoryProtocol {
     func getRestaurants() -> Observable<[RestaurantModel]> {
         return self.remote.getRestaurants()
             .map { RestaurantsMapper.mapRestaurantResponsesToDomains(input: $0) }
+    }
+    
+    func getDetailRestaurant(of id: String) -> Observable<RestaurantDetailModel> {
+        print("repo")
+        return self.remote.getDetailRestaurant(of: id)
+            .map { RestaurantsMapper.mapDetailRestaurantResponsesToDomains(input: $0) }
     }
     
 }

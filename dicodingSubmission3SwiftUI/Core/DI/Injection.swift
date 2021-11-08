@@ -26,9 +26,9 @@ final class Injection: NSObject {
         return RestoInteractor(repository: repository)
     }
     
-    func provideDetail(restaurant: RestaurantModel) -> DetailUseCase {
+    func provideDetail(restaurant: RestaurantModel, detailRestaurant: RestaurantDetailModel) -> DetailUseCase {
         let repository = provideRepository()
-        return DetailInteractor(repository: repository, restaurant: restaurant)
+        return DetailInteractor(repository: repository, restaurant: restaurant, detailRestaurant: detailRestaurant)
     }
     
 }

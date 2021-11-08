@@ -19,13 +19,13 @@ struct RestoView: View {
         VStack {
             
             if presenter.loadingState {
-                ActivityIndicator()
+                Loading()
             } else {
                 
                 ScrollView{
                     LazyVGrid(columns: columns) {
                         ForEach((self.presenter.restaurants), id: \.self) { restaurant in
-                            self.presenter.linkBuilder(for: restaurant) {
+                            self.presenter.linkBuilder(for: restaurant, detailRestaurant: dummyData) {
                                 RestoList(restaurant: restaurant)
                                     .aspectRatio(2/3, contentMode: .fit)
                             }
@@ -36,11 +36,13 @@ struct RestoView: View {
                 
             }
             
-        }.onAppear {
+        }
+        .onAppear {
             if self.presenter.restaurants.count == 0 {
                 self.presenter.getRestaurants()
             }
-        }.navigationBarTitle("Resto", displayMode: .automatic)
+        }
+        .navigationBarTitle("Resto")
         
     }
     

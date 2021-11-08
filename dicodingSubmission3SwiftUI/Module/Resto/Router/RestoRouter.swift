@@ -9,8 +9,8 @@ import SwiftUI
 
 class RestoRouter {
     
-    func makeDetailView(for restaurants: RestaurantModel) -> some View {
-        let detailUseCase = Injection.init().provideDetail(restaurant: restaurants)
+    func makeDetailView(for restaurants: RestaurantModel, detailRestaurant: RestaurantDetailModel) -> some View {
+        let detailUseCase = Injection.init().provideDetail(restaurant: restaurants, detailRestaurant: detailRestaurant)
         let presenter = DetailPresenter(detailUseCase: detailUseCase)
         return DetailView(presenter: presenter)
     }

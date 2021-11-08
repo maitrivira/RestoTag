@@ -16,12 +16,8 @@ struct RestaurantsResponse: Decodable {
 struct RestaurantResponse: Decodable {
     
     private enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case name = "name"
+        case id, name, pictureId, city, rating
         case descriptions = "description"
-        case pictureId = "pictureId"
-        case city = "city"
-        case rating = "rating"
     }
     
     let id: String?

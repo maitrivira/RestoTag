@@ -54,4 +54,23 @@ final class RestaurantsMapper {
         
     }
     
+    static func mapDetailRestaurantResponsesToDomains(
+        input restaurantDetailResponses: RestaurantDetailResponse
+    ) -> RestaurantDetailModel {
+
+        return RestaurantDetailModel(
+            id: restaurantDetailResponses.id ?? "",
+            name: restaurantDetailResponses.name ?? "",
+            descriptions: restaurantDetailResponses.descriptions ?? "",
+            city: restaurantDetailResponses.city ?? "",
+            address: restaurantDetailResponses.address ?? "",
+            pictureId: restaurantDetailResponses.pictureId ?? "",
+            rating: restaurantDetailResponses.rating ?? 0.0,
+            categories: restaurantDetailResponses.categories,
+            menus: restaurantDetailResponses.menus,
+            customerReviews: restaurantDetailResponses.customerReviews
+        )
+        
+    }
+    
 }

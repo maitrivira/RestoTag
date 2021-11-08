@@ -11,20 +11,11 @@ import SDWebImageSwiftUI
 struct RestoList: View{
     
     var restaurant: RestaurantModel
-    let url = "https://restaurant-api.dicoding.dev/images/small/"
     
     var body: some View{
         VStack{
-            Button(action: {}) {
-                
-                VStack(spacing: 15){
-                    
-                    imageFood
-                    textFood
-                    
-                }
-                
-            }
+            imageFood
+            textFood
         }
     }
 }
@@ -33,7 +24,7 @@ extension RestoList {
     
     var imageFood: some View {
         
-        WebImage(url: URL(string: url + restaurant.pictureId))
+        WebImage(url: URL(string: Endpoints.Gets.imageLarge.url + restaurant.pictureId))
             .placeholder(Image(systemName: "photo"))
             .resizable()
             .aspectRatio(contentMode: .fill)
@@ -46,9 +37,10 @@ extension RestoList {
     var textFood: some View {
         
         Text(restaurant.name)
-            .font(.title3)
+            .bold()
+            .multilineTextAlignment(.center)
             .lineLimit(1)
-            .foregroundColor(.black)
+            .foregroundColor(.red)
         
     }
     
