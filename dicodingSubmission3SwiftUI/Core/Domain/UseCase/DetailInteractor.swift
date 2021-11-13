@@ -7,12 +7,14 @@
 
 import Foundation
 import RxSwift
+import RxRelay
 
 protocol DetailUseCase {
     
     func getRestaurant() -> RestaurantModel
     func getDetailRestaurant(of id: String) -> Observable<RestaurantDetailModel>
     func getDetailRestaurantFromModel() -> RestaurantDetailModel
+    func addDetailRestaurant(of data: [RestaurantEntity]) -> BehaviorRelay<Bool>
     
 }
 
@@ -21,6 +23,7 @@ class DetailInteractor: DetailUseCase {
     private let repository: RestoRepositoryProtocol
     private let restaurant: RestaurantModel
     private let detailRestaurant: RestaurantDetailModel
+    private var saveDetailRestaurant = BehaviorRelay<Bool>(value: false)
     
     required init(
         repository: RestoRepositoryProtocol,
@@ -42,6 +45,10 @@ class DetailInteractor: DetailUseCase {
     
     func getDetailRestaurantFromModel() -> RestaurantDetailModel {
         return detailRestaurant
+    }
+    
+    func addDetailRestaurant(of data: [RestaurantEntity]) -> BehaviorRelay<Bool> {
+        return saveDetailRestaurant
     }
     
 }

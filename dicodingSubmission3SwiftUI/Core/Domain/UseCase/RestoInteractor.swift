@@ -11,6 +11,7 @@ import RxSwift
 protocol RestoUseCase {
     
     func getRestaurants() -> Observable<[RestaurantModel]>
+    func addDetailRestaurant(of restoItem: [RestaurantEntity]) -> Observable<Bool>
     
 }
 
@@ -24,6 +25,10 @@ class RestoInteractor: RestoUseCase {
     
     func getRestaurants() -> Observable<[RestaurantModel]> {
         return repository.getRestaurants()
+    }
+    
+    func addDetailRestaurant(of restoItem: [RestaurantEntity]) -> Observable<Bool> {
+        return repository.addDetailRestaurant(of: restoItem)
     }
     
 }

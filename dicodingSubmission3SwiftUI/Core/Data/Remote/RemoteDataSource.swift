@@ -46,7 +46,6 @@ extension RemoteDataSource: RemoteDataSourceProtocol {
     }
     
     func getDetailRestaurant(of id: String) -> Observable<RestaurantDetailResponse> {
-        print("remote")
         return Observable<RestaurantDetailResponse>.create { observer in
             if let url = URL(string: Endpoints.Gets.detail.url + id) {
                 print(Endpoints.Gets.detail.url + id)

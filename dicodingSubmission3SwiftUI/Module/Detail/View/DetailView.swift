@@ -49,6 +49,9 @@ struct DetailView: View {
                     .foregroundColor(Color.white)
             }),
             trailing: Button(action: {
+                
+//                self.presenter.addDetailRestaurant(of: presenter.)
+                
 //                if selected {
 //                    favorite.deleteData(of: type != "favorite" ? Int32(game.id) : gameData.id)
 //                    selected = false
@@ -58,6 +61,9 @@ struct DetailView: View {
 //                    selected = true
 //                }
             }, label: {
+                
+//                Image(systemName: "heart")
+//                    .foregroundColor(Color.white)
 //                if selected {
 //                    Image(systemName: "heart.fill").foregroundColor(Color("Gray"))
 //                } else {
@@ -176,7 +182,7 @@ extension DetailView {
                         .padding(10)
                     Spacer()
                 }
-                .background(Color.yellow)
+                .background(Color.red)
                 .cornerRadius(8)
             }
         }
@@ -191,7 +197,7 @@ struct CardView: View {
     var body: some View {
         ZStack {
             let shape = RoundedRectangle(cornerRadius: 8)
-            shape.fill().foregroundColor(.yellow)
+            shape.fill().foregroundColor(.red)
             Text(content)
                 .padding(10)
                 .font(.footnote)

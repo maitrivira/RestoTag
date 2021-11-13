@@ -17,6 +17,7 @@ class DetailPresenter: ObservableObject {
     @Published var errorMessage: String = ""
     @Published var loadingState: Bool = false
     @Published var detailRestaurant: RestaurantDetailModel
+    @Published var saveDetailRestaurant: Bool = false
     
     init(detailUseCase: DetailUseCase) {
         self.detailUseCase = detailUseCase
@@ -32,6 +33,19 @@ class DetailPresenter: ObservableObject {
                 self.detailRestaurant = result
             } onError: { error in
                 self.errorMessage = error.localizedDescription
+            } onCompleted: {
+                self.loadingState = false
+            }.disposed(by: disposeBag)
+    }
+    
+    func addDetailRestaurant(of data: [RestaurantEntity]){
+        loadingState = true
+        detailUseCase.addDetailRestaurant(of: data)
+            .observe(on: MainScheduler.instance)
+            .subscribe { result in
+                self.saveDetailRestaurant = result
+            } onError: { error in
+                self.errorMessage = "Failed to save detail restaurant"
             } onCompleted: {
                 self.loadingState = false
             }.disposed(by: disposeBag)

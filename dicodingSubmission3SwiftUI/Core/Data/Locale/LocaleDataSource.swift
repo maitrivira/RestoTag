@@ -12,7 +12,7 @@ import RxSwift
 protocol LocaleDataSourceProtocol: AnyObject {
     
     func getRestaurants() -> Observable<[RestaurantEntity]>
-    func addRestaurants(from restaurants: [RestaurantEntity]) -> Observable<Bool>
+    func addRestaurants(of restaurants: [RestaurantEntity]) -> Observable<Bool>
     
 }
 
@@ -48,7 +48,7 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
         }
     }
     
-    func addRestaurants(from restaurants: [RestaurantEntity]) -> Observable<Bool> {
+    func addRestaurants(of restaurants: [RestaurantEntity]) -> Observable<Bool> {
         return Observable<Bool>.create { observer in
             if let realm = self.realm {
                 do {
