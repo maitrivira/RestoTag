@@ -13,8 +13,10 @@ struct DetailView: View {
         GridItem(.adaptive(minimum: 100))
     ]
     @ObservedObject var presenter: DetailPresenter
+    @ObservedObject var favPresenter: FavouritePresenter
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     @GestureState private var dragOffset = CGSize.zero
+    @State var selected: Bool = false
     
     var body: some View {
         ZStack {
@@ -38,6 +40,7 @@ struct DetailView: View {
             if !self.presenter.restaurant.id.isEmpty {
                 self.presenter.getDetailRestaurant(of: presenter.restaurant.id)
             }
+            checkIcon()
         }
         .navigationBarTitle("Detail", displayMode: .inline)
         .navigationBarBackButtonHidden(true)
@@ -50,26 +53,21 @@ struct DetailView: View {
             }),
             trailing: Button(action: {
                 
-                self.presenter.addDetailRestaurant(of: RestaurantsMapper.mapRestaurantModelToEntities(input: presenter.restaurant))
-                
-//                if selected {
-//                    favorite.deleteData(of: type != "favorite" ? Int32(game.id) : gameData.id)
-//                    selected = false
-//                    type == "favorite" ? self.mode.wrappedValue.dismiss() : nil
-//                } else {
-//                    favorite.addData(data: game)
-//                    selected = true
-//                }
+                if selected {
+                    print("hapus")
+                    selected = false
+                } else {
+//                    self.presenter.addDetailRestaurant(of: RestaurantsMapper.mapRestaurantModelToEntities(input: presenter.restaurant))
+                    selected = true
+                }
                 
             }, label: {
                 
-                Image(systemName: "heart")
-                    .foregroundColor(Color.white)
-//                if selected {
-//                    Image(systemName: "heart.fill").foregroundColor(Color("Gray"))
-//                } else {
-//                    Image(systemName: "heart").foregroundColor(Color("Gray"))
-//                }
+                if selected {
+                    Image(systemName: "heart.fill").foregroundColor(Color.white)
+                } else {
+                    Image(systemName: "heart").foregroundColor(Color.white)
+                }
                 
             })
         )
@@ -78,6 +76,15 @@ struct DetailView: View {
                 self.mode.wrappedValue.dismiss()
             }
         }))
+    }
+    
+    func checkIcon() {
+        favPresenter.getFavourite()
+        if favPresenter.containsId(of: presenter.restaurant.id) {
+            selected = true
+        } else {
+            selected = false
+        }
     }
     
 }

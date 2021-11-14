@@ -13,6 +13,7 @@ protocol RestoRepositoryProtocol {
     func getRestaurants() -> Observable<[RestaurantModel]>
     func getDetailRestaurant(of id: String) -> Observable<RestaurantDetailModel>
     func addDetailRestaurant(of data: [RestaurantEntity]) -> Observable<Bool>
+    func getFavouriteRestaurant() -> Observable<[RestaurantModel]>
     
 }
 
@@ -48,6 +49,11 @@ extension RestoRepository: RestoRepositoryProtocol {
     
     func addDetailRestaurant(of data: [RestaurantEntity]) -> Observable<Bool> {
         return self.locale.addRestaurants(of: data)
+    }
+    
+    func getFavouriteRestaurant() -> Observable<[RestaurantModel]> {
+        return self.locale.getRestaurants()
+            .map { RestaurantsMapper.mapRestaurantEntitiesToDomains(input: $0) }
     }
     
 }

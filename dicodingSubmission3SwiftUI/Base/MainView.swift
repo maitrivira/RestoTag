@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     
     @EnvironmentObject var restoPresenter: RestoPresenter
+    @EnvironmentObject var favPresenter: FavouritePresenter
     let coloredNavAppearance = UINavigationBarAppearance()
     init() {
         UITabBar.appearance().barTintColor = .red
@@ -22,27 +23,25 @@ struct MainView: View {
     }
     
     var body: some View {
-        NavigationView {
-            TabView {
-                RestoView(presenter: restoPresenter)
-                    .tabItem {
-                        Label("Resto", systemImage: "house")
-                    }
-                FavouriteView()
-                    .tabItem {
-                        Label("Favourite", systemImage: "heart.fill")
-                    }
-                SearchView()
-                    .tabItem {
-                        Label("Search", systemImage: "magnifyingglass")
-                    }
-                ProfileView()
-                    .tabItem {
-                        Label("Profile", systemImage: "person.fill")
-                    }
-            }
-            .accentColor(.white)
+        TabView {
+            RestoView(presenter: restoPresenter)
+                .tabItem {
+                    Label("Resto", systemImage: "house")
+                }
+            FavouriteView(presenter: favPresenter)
+                .tabItem {
+                    Label("Favourite", systemImage: "heart.fill")
+                }
+            SearchView()
+                .tabItem {
+                    Label("Search", systemImage: "magnifyingglass")
+                }
+            ProfileView()
+                .tabItem {
+                    Label("Profile", systemImage: "person.fill")
+                }
         }
+        .accentColor(.white)
     }
 }
 

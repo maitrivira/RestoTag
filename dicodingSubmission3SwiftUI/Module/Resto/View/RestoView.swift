@@ -15,34 +15,35 @@ struct RestoView: View {
     ]
     
     var body: some View {
-        
-        VStack {
-            
-            if presenter.loadingState {
-                Loading()
-            } else {
+        NavigationView {
+            VStack {
                 
-                ScrollView{
-                    LazyVGrid(columns: columns) {
-                        ForEach((self.presenter.restaurants), id: \.self) { restaurant in
-                            self.presenter.linkBuilder(for: restaurant, detailRestaurant: dummyData) {
-                                RestoList(restaurant: restaurant)
-                                    .aspectRatio(2/3, contentMode: .fit)
+                if presenter.loadingState {
+                    Loading()
+                } else {
+                    
+                    ScrollView{
+                        LazyVGrid(columns: columns) {
+                            ForEach((self.presenter.restaurants), id: \.self) { restaurant in
+                                self.presenter.linkBuilder(for: restaurant, detailRestaurant: dummyData) {
+                                    RestoList(restaurant: restaurant)
+                                        .aspectRatio(2/3, contentMode: .fit)
+                                }
                             }
                         }
+                        .padding(16)
                     }
-                    .padding(16)
+                    
                 }
                 
             }
-            
+            .navigationBarTitle("Resto", displayMode: .inline)
         }
         .onAppear {
             if self.presenter.restaurants.count == 0 {
                 self.presenter.getRestaurants()
             }
         }
-        .navigationBarTitle("Resto", displayMode: .inline)
         
     }
     

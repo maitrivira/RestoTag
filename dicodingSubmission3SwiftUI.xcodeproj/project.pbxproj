@@ -36,6 +36,8 @@
 		B03007322733EF6000053060 /* RestoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03007312733EF6000053060 /* RestoList.swift */; };
 		B0376FED273FAC310085C2E1 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0376FEC273FAC310085C2E1 /* ProfilePresenter.swift */; };
 		B0376FEF273FAD3A0085C2E1 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0376FEE273FAD3A0085C2E1 /* ProfileInteractor.swift */; };
+		B087A13F2741365C0032B6FF /* FavouritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B087A13E2741365C0032B6FF /* FavouritePresenter.swift */; };
+		B087A141274137C60032B6FF /* FavouriteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B087A140274137C60032B6FF /* FavouriteInteractor.swift */; };
 		B0932CC22732890000359438 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0932CC12732890000359438 /* DetailView.swift */; };
 		B0932CC62732966400359438 /* RestaurantsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0932CC52732966400359438 /* RestaurantsMapper.swift */; };
 		B0ADEB7227390EA70001B6E0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ADEB7127390EA70001B6E0 /* ProfileView.swift */; };
@@ -78,6 +80,8 @@
 		B03007312733EF6000053060 /* RestoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoList.swift; sourceTree = "<group>"; };
 		B0376FEC273FAC310085C2E1 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		B0376FEE273FAD3A0085C2E1 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
+		B087A13E2741365C0032B6FF /* FavouritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritePresenter.swift; sourceTree = "<group>"; };
+		B087A140274137C60032B6FF /* FavouriteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteInteractor.swift; sourceTree = "<group>"; };
 		B0932CC12732890000359438 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		B0932CC52732966400359438 /* RestaurantsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsMapper.swift; sourceTree = "<group>"; };
 		B0ADEB7127390EA70001B6E0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -209,6 +213,7 @@
 				B0015AA6273183DA00B2F657 /* RestoInteractor.swift */,
 				B0015AD82731A54100B2F657 /* DetailInteractor.swift */,
 				B0376FEE273FAD3A0085C2E1 /* ProfileInteractor.swift */,
+				B087A140274137C60032B6FF /* FavouriteInteractor.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 		B0015AB127318E3900B2F657 /* Favourite */ = {
 			isa = PBXGroup;
 			children = (
+				B087A13D274136480032B6FF /* Presenter */,
 				B0015AB227318E4600B2F657 /* View */,
 			);
 			path = Favourite;
@@ -385,6 +391,14 @@
 				B027387A27378B9F0056D202 /* Loading.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B087A13D274136480032B6FF /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B087A13E2741365C0032B6FF /* FavouritePresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		B0932CC0273288F100359438 /* View */ = {
@@ -583,6 +597,7 @@
 				B0015AAD27318CEC00B2F657 /* RestoRouter.swift in Sources */,
 				B0015AC12731949900B2F657 /* RestoRepository.swift in Sources */,
 				B0015AC6273196E900B2F657 /* RestaurantsResponse.swift in Sources */,
+				B087A141274137C60032B6FF /* FavouriteInteractor.swift in Sources */,
 				B0015AB827318EA700B2F657 /* SearchView.swift in Sources */,
 				B0015AA22731830700B2F657 /* RestoPresenter.swift in Sources */,
 				B0015AB027318D6800B2F657 /* RestoView.swift in Sources */,
@@ -591,6 +606,7 @@
 				B030072D2733CF9900053060 /* AppComponent.swift in Sources */,
 				B0015ABB2731910E00B2F657 /* APICall.swift in Sources */,
 				B0015A8C27317CC500B2F657 /* MainView.swift in Sources */,
+				B087A13F2741365C0032B6FF /* FavouritePresenter.swift in Sources */,
 				B0ADEB7227390EA70001B6E0 /* ProfileView.swift in Sources */,
 				B027387B27378B9F0056D202 /* Loading.swift in Sources */,
 				B03007302733EB3800053060 /* ActivityIndicator.swift in Sources */,
