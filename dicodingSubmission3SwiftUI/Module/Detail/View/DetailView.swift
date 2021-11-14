@@ -50,7 +50,7 @@ struct DetailView: View {
             }),
             trailing: Button(action: {
                 
-//                self.presenter.addDetailRestaurant(of: presenter.)
+                self.presenter.addDetailRestaurant(of: RestaurantsMapper.mapRestaurantModelToEntities(input: presenter.restaurant))
                 
 //                if selected {
 //                    favorite.deleteData(of: type != "favorite" ? Int32(game.id) : gameData.id)
@@ -60,15 +60,17 @@ struct DetailView: View {
 //                    favorite.addData(data: game)
 //                    selected = true
 //                }
+                
             }, label: {
                 
-//                Image(systemName: "heart")
-//                    .foregroundColor(Color.white)
+                Image(systemName: "heart")
+                    .foregroundColor(Color.white)
 //                if selected {
 //                    Image(systemName: "heart.fill").foregroundColor(Color("Gray"))
 //                } else {
 //                    Image(systemName: "heart").foregroundColor(Color("Gray"))
 //                }
+                
             })
         )
         .gesture(DragGesture().updating($dragOffset, body: { (value, _, _) in

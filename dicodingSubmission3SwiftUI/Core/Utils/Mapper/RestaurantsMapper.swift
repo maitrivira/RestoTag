@@ -22,6 +22,19 @@ final class RestaurantsMapper {
         }
     }
     
+    static func mapRestaurantModelToEntities(
+        input restaurantModel: RestaurantModel
+    ) -> [RestaurantEntity] {
+        let newRestaurant = RestaurantEntity()
+        newRestaurant.id = restaurantModel.id
+        newRestaurant.name = restaurantModel.name
+        newRestaurant.descriptions = restaurantModel.descriptions
+        newRestaurant.pictureId = restaurantModel.pictureId
+        newRestaurant.city = restaurantModel.city
+        newRestaurant.rating = restaurantModel.rating
+        return [newRestaurant]
+    }
+    
     static func mapRestaurantEntitiesToDomains(
         input restaurantEntities: [RestaurantEntity]
     ) -> [RestaurantModel] {

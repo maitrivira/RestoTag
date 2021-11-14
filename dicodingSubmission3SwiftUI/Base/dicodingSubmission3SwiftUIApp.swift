@@ -10,11 +10,12 @@ import SwiftUI
 @main
 struct dicodingSubmission3SwiftUIApp: App {
     
-    let presenter = RestoPresenter(restoUseCase: Injection.init().provideResto())
+    let restoPresenter = RestoPresenter(restoUseCase: Injection.init().provideResto())
     
     var body: some Scene {
         WindowGroup {
-            MainView().environmentObject(presenter)
+            MainView()
+                .environmentObject(restoPresenter)
         }
     }
 }

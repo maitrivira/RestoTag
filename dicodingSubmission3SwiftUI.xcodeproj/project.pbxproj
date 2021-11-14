@@ -34,6 +34,8 @@
 		B030072D2733CF9900053060 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B030072C2733CF9900053060 /* AppComponent.swift */; };
 		B03007302733EB3800053060 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B030072F2733EB3800053060 /* ActivityIndicator.swift */; };
 		B03007322733EF6000053060 /* RestoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03007312733EF6000053060 /* RestoList.swift */; };
+		B0376FED273FAC310085C2E1 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0376FEC273FAC310085C2E1 /* ProfilePresenter.swift */; };
+		B0376FEF273FAD3A0085C2E1 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0376FEE273FAD3A0085C2E1 /* ProfileInteractor.swift */; };
 		B0932CC22732890000359438 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0932CC12732890000359438 /* DetailView.swift */; };
 		B0932CC62732966400359438 /* RestaurantsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0932CC52732966400359438 /* RestaurantsMapper.swift */; };
 		B0ADEB7227390EA70001B6E0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ADEB7127390EA70001B6E0 /* ProfileView.swift */; };
@@ -74,6 +76,8 @@
 		B030072C2733CF9900053060 /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
 		B030072F2733EB3800053060 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		B03007312733EF6000053060 /* RestoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoList.swift; sourceTree = "<group>"; };
+		B0376FEC273FAC310085C2E1 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		B0376FEE273FAD3A0085C2E1 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
 		B0932CC12732890000359438 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		B0932CC52732966400359438 /* RestaurantsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsMapper.swift; sourceTree = "<group>"; };
 		B0ADEB7127390EA70001B6E0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -204,6 +208,7 @@
 			children = (
 				B0015AA6273183DA00B2F657 /* RestoInteractor.swift */,
 				B0015AD82731A54100B2F657 /* DetailInteractor.swift */,
+				B0376FEE273FAD3A0085C2E1 /* ProfileInteractor.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -427,6 +432,7 @@
 		B0ADEB7027390E8E0001B6E0 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				B0376FEC273FAC310085C2E1 /* ProfilePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -594,6 +600,8 @@
 				B0015AD92731A54100B2F657 /* DetailInteractor.swift in Sources */,
 				B0015AC32731960400B2F657 /* RemoteDataSource.swift in Sources */,
 				B0D42E9227379C7D006C2020 /* RestaurantDetailResponse.swift in Sources */,
+				B0376FED273FAC310085C2E1 /* ProfilePresenter.swift in Sources */,
+				B0376FEF273FAD3A0085C2E1 /* ProfileInteractor.swift in Sources */,
 				B0015AA7273183DA00B2F657 /* RestoInteractor.swift in Sources */,
 				B0015A8A27317CC500B2F657 /* dicodingSubmission3SwiftUIApp.swift in Sources */,
 				B0015ABD2731932900B2F657 /* RestaurantModel.swift in Sources */,

@@ -58,12 +58,15 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
                         }
                         observer.onNext(true)
                         observer.onCompleted()
+                        print("success")
                     }
                 } catch {
                     observer.onError(DatabaseError.requestFailed)
+                    print("error")
                 }
             } else {
                 observer.onError(DatabaseError.invalidInstance)
+                print("error")
             }
             return Disposables.create()
         }

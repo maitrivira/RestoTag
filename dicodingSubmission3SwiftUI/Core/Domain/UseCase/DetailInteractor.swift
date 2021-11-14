@@ -14,7 +14,7 @@ protocol DetailUseCase {
     func getRestaurant() -> RestaurantModel
     func getDetailRestaurant(of id: String) -> Observable<RestaurantDetailModel>
     func getDetailRestaurantFromModel() -> RestaurantDetailModel
-    func addDetailRestaurant(of data: [RestaurantEntity]) -> BehaviorRelay<Bool>
+    func addDetailRestaurant(of data: [RestaurantEntity]) -> Observable<Bool>
     
 }
 
@@ -47,8 +47,8 @@ class DetailInteractor: DetailUseCase {
         return detailRestaurant
     }
     
-    func addDetailRestaurant(of data: [RestaurantEntity]) -> BehaviorRelay<Bool> {
-        return saveDetailRestaurant
+    func addDetailRestaurant(of data: [RestaurantEntity]) -> Observable<Bool> {
+        return repository.addDetailRestaurant(of: data)
     }
     
 }
