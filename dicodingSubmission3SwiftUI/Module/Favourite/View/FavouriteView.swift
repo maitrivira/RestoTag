@@ -21,16 +21,26 @@ struct FavouriteView: View {
                     Loading()
                 } else {
                     
-                    ScrollView {
-                        LazyVGrid(columns: columns) {
-                            ForEach((self.presenter.restaurants), id: \.self) { restaurant in
-                                self.presenter.linkBuilder(for: restaurant, detailRestaurant: dummyData) {
-                                    RestoList(restaurant: restaurant)
-                                        .aspectRatio(2/3, contentMode: .fit)
+                    if presenter.restaurants.isEmpty {
+                        
+                        VStack {
+                            Text("Data is Empty")
+                        }
+                        
+                    } else {
+                        
+                        ScrollView {
+                            LazyVGrid(columns: columns) {
+                                ForEach((self.presenter.restaurants), id: \.self) { restaurant in
+                                    self.presenter.linkBuilder(for: restaurant, detailRestaurant: dummyData) {
+                                        RestoList(restaurant: restaurant)
+                                            .aspectRatio(2/3, contentMode: .fit)
+                                    }
                                 }
                             }
+                            .padding(16)
                         }
-                        .padding(16)
+                        
                     }
                     
                 }

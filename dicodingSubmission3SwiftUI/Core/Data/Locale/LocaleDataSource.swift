@@ -72,6 +72,30 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
         }
     }
     
+    func deleteRestaurant(of restaurants: [RestaurantEntity]) -> Observable<Bool> {
+        return Observable<Bool>.create { observer in
+            if let realm = self.realm {
+                do {
+                    try realm.write {
+                        for restaurant in restaurants {
+                            realm.delete(realm.objects(RestaurantEntity.self).filter("id=%@", restaurant.id))
+                        }
+                        observer.onNext(true)
+                        observer.onCompleted()
+                        print("success")
+                    }
+                } catch {
+                    observer.onError(DatabaseError.requestFailed)
+                    print("error")
+                }
+            } else {
+                observer.onError(DatabaseError.invalidInstance)
+                print("error")
+            }
+            return Disposables.create()
+        }
+    }
+    
 }
 
 extension Results {

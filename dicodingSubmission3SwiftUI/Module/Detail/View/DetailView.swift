@@ -12,7 +12,7 @@ struct DetailView: View {
     let columns = [
         GridItem(.adaptive(minimum: 100))
     ]
-    @ObservedObject var presenter: DetailPresenter
+    @ObservedObject var detailPresenter: DetailPresenter
     @ObservedObject var favPresenter: FavouritePresenter
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     @GestureState private var dragOffset = CGSize.zero
@@ -21,7 +21,7 @@ struct DetailView: View {
     var body: some View {
         ZStack {
             
-            if presenter.loadingState {
+            if detailPresenter.loadingState {
                 Loading()
             } else {
                 ScrollView{
@@ -37,8 +37,8 @@ struct DetailView: View {
             
         }
         .onAppear {
-            if !self.presenter.restaurant.id.isEmpty {
-                self.presenter.getDetailRestaurant(of: presenter.restaurant.id)
+            if !self.detailPresenter.restaurant.id.isEmpty {
+                self.detailPresenter.getDetailRestaurant(of: detailPresenter.restaurant.id)
             }
             checkIcon()
         }
@@ -54,11 +54,12 @@ struct DetailView: View {
             trailing: Button(action: {
                 
                 if selected {
-                    print("hapus")
                     selected = false
+                    self.detailPresenter.deleteDetailRestaurant(of: RestaurantsMapper.mapRestaurantModelToEntities(input: detailPresenter.restaurant))
+                    self.mode.wrappedValue.dismiss()
                 } else {
-//                    self.presenter.addDetailRestaurant(of: RestaurantsMapper.mapRestaurantModelToEntities(input: presenter.restaurant))
                     selected = true
+                    self.detailPresenter.addDetailRestaurant(of: RestaurantsMapper.mapRestaurantModelToEntities(input: detailPresenter.restaurant))
                 }
                 
             }, label: {
@@ -80,7 +81,7 @@ struct DetailView: View {
     
     func checkIcon() {
         favPresenter.getFavourite()
-        if favPresenter.containsId(of: presenter.restaurant.id) {
+        if favPresenter.containsId(of: detailPresenter.restaurant.id) {
             selected = true
         } else {
             selected = false
@@ -95,12 +96,12 @@ extension DetailView {
         
         VStack(alignment: .center, spacing: 10){
             
-            Text(presenter.detailRestaurant.name)
+            Text(detailPresenter.detailRestaurant.name)
                 .font(.title2)
                 .bold()
                 .multilineTextAlignment(.center)
             
-            WebImage(url: URL(string: Endpoints.Gets.imageLarge.url + presenter.detailRestaurant.pictureId))
+            WebImage(url: URL(string: Endpoints.Gets.imageLarge.url + detailPresenter.detailRestaurant.pictureId))
                 .placeholder(Image(systemName: "photo"))
                 .resizable()
                 .frame(height: 250, alignment: .center)
@@ -112,9 +113,9 @@ extension DetailView {
     var content: some View {
         
         VStack(alignment: .leading, spacing: 5) {
-            Text(presenter.detailRestaurant.address)
+            Text(detailPresenter.detailRestaurant.address)
                 .bold()
-            Text(presenter.detailRestaurant.city)
+            Text(detailPresenter.detailRestaurant.city)
                 .bold()
             HStack {
                 Text("Rating :")
@@ -122,17 +123,17 @@ extension DetailView {
                 Image(systemName: "star.fill")
                     .font(.system(size: 10))
                     .foregroundColor(Color.orange)
-                Text(String(presenter.detailRestaurant.rating))
+                Text(String(detailPresenter.detailRestaurant.rating))
                     .bold()
             }
             Spacer()
             LazyVGrid(columns: columns) {
-                ForEach(presenter.detailRestaurant.categories, id: \.self) { category in
+                ForEach(detailPresenter.detailRestaurant.categories, id: \.self) { category in
                     CardView(content: category.name ?? "")
                 }
             }
             Spacer()
-            Text(presenter.detailRestaurant.descriptions)
+            Text(detailPresenter.detailRestaurant.descriptions)
         }
         .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
@@ -145,7 +146,7 @@ extension DetailView {
                 .bold()
             Spacer()
             LazyVGrid(columns: columns) {
-                ForEach(presenter.detailRestaurant.menus.foods, id: \.self) { food in
+                ForEach(detailPresenter.detailRestaurant.menus.foods, id: \.self) { food in
                     CardView(content: food.name ?? "")
                 }
             }
@@ -160,7 +161,7 @@ extension DetailView {
                 .bold()
             Spacer()
             LazyVGrid(columns: columns) {
-                ForEach(presenter.detailRestaurant.menus.drinks, id: \.self) { drink in
+                ForEach(detailPresenter.detailRestaurant.menus.drinks, id: \.self) { drink in
                     CardView(content: drink.name ?? "")
                 }
             }
@@ -174,7 +175,7 @@ extension DetailView {
             Text("Reviews")
                 .bold()
             Spacer()
-            ForEach(presenter.detailRestaurant.customerReviews, id: \.self) { review in
+            ForEach(detailPresenter.detailRestaurant.customerReviews, id: \.self) { review in
                 VStack(alignment: .leading, spacing: 5){
                     HStack{
                         Text(review.name ?? "")

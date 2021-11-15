@@ -40,9 +40,7 @@ struct RestoView: View {
             .navigationBarTitle("Resto", displayMode: .inline)
         }
         .onAppear {
-            if self.presenter.restaurants.count == 0 {
-                self.presenter.getRestaurants()
-            }
+            self.presenter.getRestaurants()
         }
         
     }

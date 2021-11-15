@@ -14,7 +14,7 @@ class RestoRouter {
         let favUseCase = Injection.init().provideFav()
         let presenter = DetailPresenter(detailUseCase: detailUseCase)
         let favPresenter = FavouritePresenter(favUseCase: favUseCase)
-        return DetailView(presenter: presenter, favPresenter: favPresenter)
+        return DetailView(detailPresenter: presenter, favPresenter: favPresenter)
     }
     
 }

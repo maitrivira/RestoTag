@@ -51,4 +51,17 @@ class DetailPresenter: ObservableObject {
             }.disposed(by: disposeBag)
     }
     
+    func deleteDetailRestaurant(of data: [RestaurantEntity]){
+        loadingState = true
+        detailUseCase.deleteDetailRestaurant(of: data)
+            .observe(on: MainScheduler.instance)
+            .subscribe { result in
+                self.saveDetailRestaurant = result
+            }onError: { error in
+                self.errorMessage = "Failed to save detail restaurant"
+            } onCompleted: {
+                self.loadingState = false
+            }.disposed(by: disposeBag)
+    }
+    
 }
