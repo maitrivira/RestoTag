@@ -28,6 +28,7 @@ enum Endpoints {
         case imageSmall
         case imageMedium
         case imageLarge
+        case search
         
         public var url: String {
             switch self {
@@ -36,6 +37,7 @@ enum Endpoints {
             case .imageSmall: return "\(API.baseUrl)/images/small/"
             case .imageMedium: return "\(API.baseUrl)/images/medium/"
             case .imageLarge: return "\(API.baseUrl)/images/large/"
+            case .search: return "\(API.baseUrl)/search?q="
             }
         }
         

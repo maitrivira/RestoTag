@@ -67,4 +67,25 @@ extension RemoteDataSource: RemoteDataSourceProtocol {
         }
     }
     
+    func getSearchRestaurants(by title: String) -> Observable<[RestaurantResponse]> {
+        return Observable<[RestaurantResponse]>.create { observer in
+            if let url = URL(string: Endpoints.Gets.search.url + title) {
+                AF.request(url)
+                    .validate()
+                    .responseDecodable(of: RestaurantsResponse.self) { response in
+                        switch response.result {
+                        case .success(let value):
+                            print("success search restaurants")
+                            observer.onNext(value.restaurants)
+                            observer.onCompleted()
+                        case .failure:
+                            print("failure")
+                            observer.onError(URLError.invalidResponse)
+                        }
+                    }
+            }
+            return Disposables.create()
+        }
+    }
+    
 }
