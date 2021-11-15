@@ -33,7 +33,7 @@ struct MainView: View {
                 .tabItem {
                     Label("Favourite", systemImage: "heart.fill")
                 }
-            SearchView(presenter: SearchPresenter)
+            Searchview(presenter: SearchPresenter)
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }
