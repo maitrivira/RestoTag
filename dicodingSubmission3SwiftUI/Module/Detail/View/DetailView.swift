@@ -23,6 +23,8 @@ struct DetailView: View {
             
             if detailPresenter.loadingState {
                 Loading()
+            } else if detailPresenter.detailRestaurant.id == "0" {
+                Loading()
             } else {
                 ScrollView {
                     VStack {
@@ -37,10 +39,10 @@ struct DetailView: View {
             
         }
         .onAppear {
-            if !self.detailPresenter.restaurant.id.isEmpty {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.detailPresenter.getDetailRestaurant(of: detailPresenter.restaurant.id)
+                checkIcon()
             }
-            checkIcon()
         }
         .navigationBarTitle("Detail", displayMode: .inline)
         .navigationBarBackButtonHidden(true)

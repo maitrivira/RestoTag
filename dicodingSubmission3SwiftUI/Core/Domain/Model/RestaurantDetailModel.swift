@@ -23,6 +23,6 @@ struct RestaurantDetailModel: Decodable {
     
 }
 
-let dummyData = RestaurantDetailModel(id: "Contoh", name: "Contoh", descriptions: "Contoh", city: "Contoh", address: "Contoh", pictureId: "Contoh", rating: 0.0, categories: [], menus: menus, customerReviews: [])
+let dummyData = RestaurantDetailModel(id: "0", name: "", descriptions: "", city: "", address: "", pictureId: "", rating: 0.0, categories: [], menus: menus, customerReviews: [])
 
 let menus = Menus(foods: [], drinks: [])

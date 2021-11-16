@@ -14,12 +14,10 @@ struct MainView: View {
     @EnvironmentObject var searchPresenter: SearchPresenter
     @EnvironmentObject var profilePresenter: ProfilePresenter
     let coloredNavAppearance = UINavigationBarAppearance()
+    
     init() {
-        UITabBar.appearance().barTintColor = .red
-        coloredNavAppearance.configureWithOpaqueBackground()
         coloredNavAppearance.backgroundColor = .red
         coloredNavAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        coloredNavAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         UINavigationBar.appearance().standardAppearance = coloredNavAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = coloredNavAppearance
     }
@@ -43,6 +41,6 @@ struct MainView: View {
                     Label("Profile", systemImage: "person.fill")
                 }
         }
-        .accentColor(.white)
+        .accentColor(.black)
     }
 }

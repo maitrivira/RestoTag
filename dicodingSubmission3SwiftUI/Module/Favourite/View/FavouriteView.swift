@@ -16,29 +16,25 @@ struct FavouriteView: View {
     var body: some View {
         NavigationView {
             VStack {
-                
-                ZStack {
-                    if presenter.loadingState {
-                        Loading()
-                    } else if presenter.restaurants.isEmpty {
-                        Spacer()
-                        emptyFav
-                        Spacer()
-                    } else {
-                        ScrollView(.vertical, showsIndicators: false) {
-                            LazyVGrid(columns: columns) {
-                                ForEach((self.presenter.restaurants), id: \.self) { restaurant in
-                                    self.presenter.linkBuilder(for: restaurant, detailRestaurant: dummyData) {
-                                        RestoList(restaurant: restaurant)
-                                            .aspectRatio(2/3, contentMode: .fit)
-                                    }
+                if presenter.loadingState {
+                    Loading()
+                } else if presenter.restaurants.isEmpty {
+                    Spacer()
+                    emptyFav
+                    Spacer()
+                } else {
+                    ScrollView(.vertical, showsIndicators: false) {
+                        LazyVGrid(columns: columns) {
+                            ForEach((self.presenter.restaurants), id: \.self) { restaurant in
+                                self.presenter.linkBuilder(for: restaurant, detailRestaurant: dummyData) {
+                                    RestoList(restaurant: restaurant)
+                                        .aspectRatio(2/3, contentMode: .fit)
                                 }
                             }
-                            .padding(16)
                         }
+                        .padding(16)
                     }
                 }
-                
             }
             .navigationBarTitle("Favourite", displayMode: .inline)
         }
