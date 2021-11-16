@@ -29,7 +29,6 @@
 		B0015AD72731A46E00B2F657 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0015AD62731A46E00B2F657 /* DetailPresenter.swift */; };
 		B0015AD92731A54100B2F657 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0015AD82731A54100B2F657 /* DetailInteractor.swift */; };
 		B027387B27378B9F0056D202 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B027387A27378B9F0056D202 /* Loading.swift */; };
-		B030072D2733CF9900053060 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B030072C2733CF9900053060 /* AppComponent.swift */; };
 		B03007302733EB3800053060 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B030072F2733EB3800053060 /* ActivityIndicator.swift */; };
 		B03007322733EF6000053060 /* RestoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03007312733EF6000053060 /* RestoList.swift */; };
 		B0376FED273FAC310085C2E1 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0376FEC273FAC310085C2E1 /* ProfilePresenter.swift */; };
@@ -76,7 +75,6 @@
 		B0015AD62731A46E00B2F657 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		B0015AD82731A54100B2F657 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		B027387A27378B9F0056D202 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
-		B030072C2733CF9900053060 /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
 		B030072F2733EB3800053060 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		B03007312733EF6000053060 /* RestoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoList.swift; sourceTree = "<group>"; };
 		B0376FEC273FAC310085C2E1 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
@@ -139,7 +137,6 @@
 			children = (
 				B0015AAA27318A9D00B2F657 /* SupportingFiles */,
 				B0015AA9273186FF00B2F657 /* Base */,
-				B0015A9727317E5700B2F657 /* DIComponent */,
 				B0015AA3273183A500B2F657 /* Core */,
 				B0015A9E273182A700B2F657 /* Module */,
 				B0015A8F27317CC700B2F657 /* Preview Content */,
@@ -153,14 +150,6 @@
 				B0015A9027317CC700B2F657 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		B0015A9727317E5700B2F657 /* DIComponent */ = {
-			isa = PBXGroup;
-			children = (
-				B030072C2733CF9900053060 /* AppComponent.swift */,
-			);
-			path = DIComponent;
 			sourceTree = "<group>";
 		};
 		B0015A9E273182A700B2F657 /* Module */ = {
@@ -619,7 +608,6 @@
 				B0015AB027318D6800B2F657 /* RestoView.swift in Sources */,
 				B0015ACC27319FF400B2F657 /* RestaurantEntity.swift in Sources */,
 				B0932CC62732966400359438 /* RestaurantsMapper.swift in Sources */,
-				B030072D2733CF9900053060 /* AppComponent.swift in Sources */,
 				B0015ABB2731910E00B2F657 /* APICall.swift in Sources */,
 				B0B179122742A37C0078E335 /* SearchPresenter.swift in Sources */,
 				B0015A8C27317CC500B2F657 /* MainView.swift in Sources */,
