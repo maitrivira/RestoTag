@@ -24,8 +24,8 @@ struct DetailView: View {
             if detailPresenter.loadingState {
                 Loading()
             } else {
-                ScrollView{
-                    VStack{
+                ScrollView {
+                    VStack {
                         imageDetail
                         content
                         food
@@ -94,7 +94,7 @@ extension DetailView {
     
     var imageDetail: some View {
         
-        VStack(alignment: .center, spacing: 10){
+        VStack(alignment: .center, spacing: 10) {
             
             Text(detailPresenter.detailRestaurant.name)
                 .font(.title2)
@@ -141,7 +141,7 @@ extension DetailView {
     }
     
     var food: some View {
-        VStack(alignment: .leading, spacing: 5){
+        VStack(alignment: .leading, spacing: 5) {
             Text("Food")
                 .bold()
             Spacer()
@@ -156,7 +156,7 @@ extension DetailView {
     }
     
     var drink: some View {
-        VStack(alignment: .leading, spacing: 5){
+        VStack(alignment: .leading, spacing: 5) {
             Text("Drink")
                 .bold()
             Spacer()
@@ -171,13 +171,13 @@ extension DetailView {
     }
     
     var reviews: some View {
-        VStack(alignment: .leading, spacing: 5){
+        VStack(alignment: .leading, spacing: 5) {
             Text("Reviews")
                 .bold()
             Spacer()
             ForEach(detailPresenter.detailRestaurant.customerReviews, id: \.self) { review in
-                VStack(alignment: .leading, spacing: 5){
-                    HStack{
+                VStack(alignment: .leading, spacing: 5) {
+                    HStack {
                         Text(review.name ?? "")
                             .foregroundColor(.white)
                             .bold()

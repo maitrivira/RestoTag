@@ -17,4 +17,10 @@ class RestoRouter {
         return DetailView(detailPresenter: presenter, favPresenter: favPresenter)
     }
     
+    func makeProfile() -> some View {
+        let profileUseCase = Injection.init().provideProfile()
+        let presenter = ProfilePresenter(profileUseCase: profileUseCase)
+        return ProfileView(presenter: presenter)
+    }
+    
 }

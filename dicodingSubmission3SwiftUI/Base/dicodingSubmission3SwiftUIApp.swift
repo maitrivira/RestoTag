@@ -8,11 +8,12 @@
 import SwiftUI
 
 @main
-struct dicodingSubmission3SwiftUIApp: App {
+struct DicodingSubmission3SwiftUIApp: App {
     
     let restoPresenter = RestoPresenter(restoUseCase: Injection.init().provideResto())
     let favPresenter = FavouritePresenter(favUseCase: Injection.init().provideFav())
     let searchPresenter = SearchPresenter(searchUseCase: Injection.init().provideSearch())
+    let profilePresenter = ProfilePresenter(profileUseCase: Injection.init().provideProfile())
     
     var body: some Scene {
         WindowGroup {
@@ -20,6 +21,7 @@ struct dicodingSubmission3SwiftUIApp: App {
                 .environmentObject(restoPresenter)
                 .environmentObject(favPresenter)
                 .environmentObject(searchPresenter)
+                .environmentObject(profilePresenter)
         }
     }
 }

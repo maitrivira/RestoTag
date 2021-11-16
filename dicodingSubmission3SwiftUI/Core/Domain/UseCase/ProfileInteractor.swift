@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+protocol ProfileUseCase {
+    
+}
+
+class ProfileInteractor: ProfileUseCase {
+    
+    private let repository: RestoRepositoryProtocol
+    
+    required init(repository: RestoRepositoryProtocol) {
+        self.repository = repository
+    }
+    
+}

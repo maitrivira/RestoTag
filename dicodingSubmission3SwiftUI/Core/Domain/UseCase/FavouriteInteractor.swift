@@ -18,11 +18,11 @@ class FavouriteInteractor: FavouriteUseCase {
     
     private let repository: RestoRepositoryProtocol
     
-    required init(repository: RestoRepositoryProtocol){
+    required init(repository: RestoRepositoryProtocol) {
         self.repository = repository
     }
     
-    func getFavourite() -> Observable<[RestaurantModel]>{
+    func getFavourite() -> Observable<[RestaurantModel]> {
         return repository.getFavouriteRestaurant()
     }
 

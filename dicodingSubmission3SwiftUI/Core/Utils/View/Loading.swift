@@ -9,8 +9,7 @@ import SwiftUI
 
 struct Loading: View {
     var body: some View {
-        VStack {
-            
+        VStack {      
             ActivityIndicator()
             Text("Loading...")
         }

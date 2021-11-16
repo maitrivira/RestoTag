@@ -17,19 +17,15 @@ struct FavouriteView: View {
         NavigationView {
             VStack {
                 
-                if presenter.loadingState {
-                    Loading()
-                } else {
-                    
-                    if presenter.restaurants.isEmpty {
-                        
-                        VStack {
-                            Text("Data is Empty")
-                        }
-                        
+                ZStack {
+                    if presenter.loadingState {
+                        Loading()
+                    } else if presenter.restaurants.isEmpty {
+                        Spacer()
+                        emptyFav
+                        Spacer()
                     } else {
-                        
-                        ScrollView {
+                        ScrollView(.vertical, showsIndicators: false) {
                             LazyVGrid(columns: columns) {
                                 ForEach((self.presenter.restaurants), id: \.self) { restaurant in
                                     self.presenter.linkBuilder(for: restaurant, detailRestaurant: dummyData) {
@@ -40,9 +36,7 @@ struct FavouriteView: View {
                             }
                             .padding(16)
                         }
-                        
                     }
-                    
                 }
                 
             }
@@ -53,4 +47,15 @@ struct FavouriteView: View {
         }
         
     }
+}
+
+extension FavouriteView {
+    
+    var emptyFav: some View {
+      CustomEmptyView(
+        image: "assetSearchNotFound",
+        title: "Data not found"
+      ).offset(y: 80)
+    }
+    
 }

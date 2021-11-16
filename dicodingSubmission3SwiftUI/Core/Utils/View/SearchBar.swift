@@ -1,5 +1,5 @@
 //
-//  SearchBat.swift
+//  SearchBar.swift
 //  dicodingSubmission3SwiftUI
 //
 //  Created by Maitri Vira on 15/11/21.

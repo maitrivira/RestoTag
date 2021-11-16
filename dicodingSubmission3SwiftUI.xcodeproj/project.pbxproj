@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B0015A8A27317CC500B2F657 /* dicodingSubmission3SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0015A8927317CC500B2F657 /* dicodingSubmission3SwiftUIApp.swift */; };
+		B0015A8A27317CC500B2F657 /* DicodingSubmission3SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0015A8927317CC500B2F657 /* DicodingSubmission3SwiftUIApp.swift */; };
 		B0015A8C27317CC500B2F657 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0015A8B27317CC500B2F657 /* MainView.swift */; };
 		B0015A8E27317CC700B2F657 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0015A8D27317CC700B2F657 /* Assets.xcassets */; };
 		B0015A9127317CC700B2F657 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0015A9027317CC700B2F657 /* Preview Assets.xcassets */; };
 		B0015A9C27317F3200B2F657 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B0015A9A27317F3200B2F657 /* README.md */; };
-		B0015A9D27317F3200B2F657 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = B0015A9B27317F3200B2F657 /* .swiftlint.yml */; };
 		B0015AA22731830700B2F657 /* RestoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0015AA12731830700B2F657 /* RestoPresenter.swift */; };
 		B0015AA7273183DA00B2F657 /* RestoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0015AA6273183DA00B2F657 /* RestoInteractor.swift */; };
 		B0015AAD27318CEC00B2F657 /* RestoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0015AAC27318CEC00B2F657 /* RestoRouter.swift */; };
@@ -55,12 +54,11 @@
 		43369EB6B6C8C4CF79175412 /* Pods-dicodingSubmission3SwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dicodingSubmission3SwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-dicodingSubmission3SwiftUI/Pods-dicodingSubmission3SwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
 		98FBAB4E79E14589134361DF /* Pods-dicodingSubmission3SwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dicodingSubmission3SwiftUI.release.xcconfig"; path = "Target Support Files/Pods-dicodingSubmission3SwiftUI/Pods-dicodingSubmission3SwiftUI.release.xcconfig"; sourceTree = "<group>"; };
 		B0015A8627317CC500B2F657 /* dicodingSubmission3SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dicodingSubmission3SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0015A8927317CC500B2F657 /* dicodingSubmission3SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dicodingSubmission3SwiftUIApp.swift; sourceTree = "<group>"; };
+		B0015A8927317CC500B2F657 /* DicodingSubmission3SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicodingSubmission3SwiftUIApp.swift; sourceTree = "<group>"; };
 		B0015A8B27317CC500B2F657 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B0015A8D27317CC700B2F657 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0015A9027317CC700B2F657 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B0015A9A27317F3200B2F657 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		B0015A9B27317F3200B2F657 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		B0015AA12731830700B2F657 /* RestoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoPresenter.swift; sourceTree = "<group>"; };
 		B0015AA6273183DA00B2F657 /* RestoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoInteractor.swift; sourceTree = "<group>"; };
 		B0015AAC27318CEC00B2F657 /* RestoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoRouter.swift; sourceTree = "<group>"; };
@@ -231,7 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				B0015A8B27317CC500B2F657 /* MainView.swift */,
-				B0015A8927317CC500B2F657 /* dicodingSubmission3SwiftUIApp.swift */,
+				B0015A8927317CC500B2F657 /* DicodingSubmission3SwiftUIApp.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -239,7 +237,6 @@
 		B0015AAA27318A9D00B2F657 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				B0015A9B27317F3200B2F657 /* .swiftlint.yml */,
 				B0015A9A27317F3200B2F657 /* README.md */,
 				B0015A8D27317CC700B2F657 /* Assets.xcassets */,
 			);
@@ -487,11 +484,11 @@
 			buildConfigurationList = B0015A9427317CC700B2F657 /* Build configuration list for PBXNativeTarget "dicodingSubmission3SwiftUI" */;
 			buildPhases = (
 				17BF7CF4B8DB13823BF0F937 /* [CP] Check Pods Manifest.lock */,
+				B0015AA82731846B00B2F657 /* ShellScript */,
 				B0015A8227317CC500B2F657 /* Sources */,
 				B0015A8327317CC500B2F657 /* Frameworks */,
 				B0015A8427317CC500B2F657 /* Resources */,
 				7F85D232B008204A4677CC82 /* [CP] Embed Pods Frameworks */,
-				B0015AA82731846B00B2F657 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -540,7 +537,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0015A9D27317F3200B2F657 /* .swiftlint.yml in Resources */,
 				B0015A9C27317F3200B2F657 /* README.md in Resources */,
 				B0015A9127317CC700B2F657 /* Preview Assets.xcassets in Resources */,
 				B0015A8E27317CC700B2F657 /* Assets.xcassets in Resources */,
@@ -604,7 +600,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# \"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -642,7 +638,7 @@
 				B0376FEF273FAD3A0085C2E1 /* ProfileInteractor.swift in Sources */,
 				B0015AA7273183DA00B2F657 /* RestoInteractor.swift in Sources */,
 				B0B1791C2742B1AC0078E335 /* SearchView.swift in Sources */,
-				B0015A8A27317CC500B2F657 /* dicodingSubmission3SwiftUIApp.swift in Sources */,
+				B0015A8A27317CC500B2F657 /* DicodingSubmission3SwiftUIApp.swift in Sources */,
 				B0B179182742A7E40078E335 /* CustomEmptyView.swift in Sources */,
 				B0015ABD2731932900B2F657 /* RestaurantModel.swift in Sources */,
 				B03007322733EF6000053060 /* RestoList.swift in Sources */,

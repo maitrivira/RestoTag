@@ -10,6 +10,10 @@ import RxSwift
 
 class ProfilePresenter: ObservableObject {
     
+    private let profileUseCase: ProfileUseCase
     
+    init(profileUseCase: ProfileUseCase) {
+        self.profileUseCase = profileUseCase
+    }
     
 }

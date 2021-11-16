@@ -25,7 +25,7 @@ struct Searchview: View {
                 
                 ZStack {
                   if presenter.loadingState {
-                    loadingIndicator
+                    Loading()
                   } else if presenter.title.isEmpty {
                     emptyTitle
                   } else if presenter.restaurants.isEmpty {
@@ -49,6 +49,8 @@ struct Searchview: View {
                   }
                 }
                 
+                Spacer()
+                
             }
             .navigationBarTitle("Search", displayMode: .inline)
         }
@@ -56,13 +58,6 @@ struct Searchview: View {
 }
 
 extension Searchview {
-  
-  var loadingIndicator: some View {
-    VStack {
-      Text("Loading...")
-      ActivityIndicator()
-    }
-  }
   
   var errorIndicator: some View {
     CustomEmptyView(
@@ -74,7 +69,7 @@ extension Searchview {
   var emptyTitle: some View {
     CustomEmptyView(
       image: "assetSearchMeal",
-      title: "Come on, find your favorite food!"
+      title: "Come on, find your favorite restaurant!"
     ).offset(y: 50)
   }
   var emptyMeals: some View {

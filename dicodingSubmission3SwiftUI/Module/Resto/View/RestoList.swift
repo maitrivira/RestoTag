@@ -8,12 +8,12 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
-struct RestoList: View{
+struct RestoList: View {
     
     var restaurant: RestaurantModel
     
-    var body: some View{
-        VStack{
+    var body: some View {
+        VStack {
             imageFood
             textFood
         }
@@ -39,7 +39,6 @@ extension RestoList {
         Text(restaurant.name)
             .bold()
             .multilineTextAlignment(.center)
-            .lineLimit(1)
             .foregroundColor(.red)
         
     }

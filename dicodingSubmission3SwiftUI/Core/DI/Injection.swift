@@ -13,10 +13,8 @@ final class Injection: NSObject {
     private func provideRepository() -> RestoRepositoryProtocol {
         
         let realm = try? Realm()
-        
         let locale: LocaleDataSource = LocaleDataSource.sharedInstance(realm)
         let remote: RemoteDataSource = RemoteDataSource.sharedInstance
-        
         return RestoRepository.sharedInstance(locale, remote)
         
     }
@@ -39,6 +37,11 @@ final class Injection: NSObject {
     func provideSearch() -> SearchUseCase {
         let repository = provideRepository()
         return SearchInteractor(repository: repository)
+    }
+    
+    func provideProfile() -> ProfileUseCase {
+        let repository = provideRepository()
+        return ProfileInteractor(repository: repository)
     }
     
 }

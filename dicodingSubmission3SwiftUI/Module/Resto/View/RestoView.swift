@@ -22,7 +22,7 @@ struct RestoView: View {
                     Loading()
                 } else {
                     
-                    ScrollView{
+                    ScrollView {
                         LazyVGrid(columns: columns) {
                             ForEach((self.presenter.restaurants), id: \.self) { restaurant in
                                 self.presenter.linkBuilder(for: restaurant, detailRestaurant: dummyData) {
@@ -40,9 +40,10 @@ struct RestoView: View {
             .navigationBarTitle("Resto", displayMode: .inline)
         }
         .onAppear {
-            self.presenter.getRestaurants()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.presenter.getRestaurants()
+            }
         }
-        
     }
     
 }

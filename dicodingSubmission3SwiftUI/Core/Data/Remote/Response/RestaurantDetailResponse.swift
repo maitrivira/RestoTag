@@ -85,5 +85,3 @@ struct Drinks: Decodable, Hashable {
     let name: String?
     
 }
-
-

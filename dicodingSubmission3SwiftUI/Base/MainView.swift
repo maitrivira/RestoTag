@@ -11,7 +11,8 @@ struct MainView: View {
     
     @EnvironmentObject var restoPresenter: RestoPresenter
     @EnvironmentObject var favPresenter: FavouritePresenter
-    @EnvironmentObject var SearchPresenter: SearchPresenter
+    @EnvironmentObject var searchPresenter: SearchPresenter
+    @EnvironmentObject var profilePresenter: ProfilePresenter
     let coloredNavAppearance = UINavigationBarAppearance()
     init() {
         UITabBar.appearance().barTintColor = .red
@@ -33,21 +34,15 @@ struct MainView: View {
                 .tabItem {
                     Label("Favourite", systemImage: "heart.fill")
                 }
-            Searchview(presenter: SearchPresenter)
+            Searchview(presenter: searchPresenter)
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }
-            ProfileView()
+            ProfileView(presenter: profilePresenter)
                 .tabItem {
                     Label("Profile", systemImage: "person.fill")
                 }
         }
         .accentColor(.white)
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 import RxSwift
 
-protocol SearchUseCase{
+protocol SearchUseCase {
     
     func getSearch(by title: String) -> Observable<[RestaurantModel]>
     
@@ -18,11 +18,11 @@ class SearchInteractor: SearchUseCase {
     
     private let repository: RestoRepositoryProtocol
     
-    required init(repository: RestoRepositoryProtocol){
+    required init(repository: RestoRepositoryProtocol) {
         self.repository = repository
     }
     
-    func getSearch(by title: String) -> Observable<[RestaurantModel]>{
+    func getSearch(by title: String) -> Observable<[RestaurantModel]> {
         return repository.getSearchRestaurant(by: title)
     }
     
