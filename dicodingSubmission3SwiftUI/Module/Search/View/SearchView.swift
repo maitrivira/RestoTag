@@ -11,6 +11,9 @@ struct Searchview: View {
     
     @State var isSearching: Bool = false
     @ObservedObject var presenter: SearchPresenter
+    let columns = [
+        GridItem(.adaptive(minimum: 150))
+    ]
     
     var body: some View {
         NavigationView {
@@ -31,17 +34,17 @@ struct Searchview: View {
                     errorIndicator
                   } else {
                     ScrollView(.vertical, showsIndicators: false) {
-                      ForEach(
-                        self.presenter.restaurants,
-                        id: \.id
-                      ) { restaurant in
-                        ZStack {
-                          self.presenter.linkBuilder(for: restaurant, detailRestaurant: dummyData) {
-                              RestoList(restaurant: restaurant)
-                                  .aspectRatio(2/3, contentMode: .fit)
-                          }
-                        }.padding(8)
-                      }
+                        LazyVGrid(columns: columns) {
+                            ForEach(
+                              self.presenter.restaurants,
+                              id: \.id
+                            ) { restaurant in
+                                self.presenter.linkBuilder(for: restaurant, detailRestaurant: dummyData) {
+                                    RestoList(restaurant: restaurant)
+                                        .aspectRatio(2/3, contentMode: .fit)
+                                }
+                            }
+                        }
                     }
                   }
                 }
