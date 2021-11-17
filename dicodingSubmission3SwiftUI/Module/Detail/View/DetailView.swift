@@ -57,11 +57,11 @@ struct DetailView: View {
                 
                 if selected {
                     selected = false
-                    self.detailPresenter.deleteDetailRestaurant(of: RestaurantsMapper.mapRestaurantModelToEntities(input: detailPresenter.restaurant))
+                    self.detailPresenter.deleteDetailRestaurant(of: detailPresenter.restaurant)
                     self.mode.wrappedValue.dismiss()
                 } else {
                     selected = true
-                    self.detailPresenter.addDetailRestaurant(of: RestaurantsMapper.mapRestaurantModelToEntities(input: detailPresenter.restaurant))
+                    self.detailPresenter.addDetailRestaurant(of: detailPresenter.restaurant)
                 }
                 
             }, label: {

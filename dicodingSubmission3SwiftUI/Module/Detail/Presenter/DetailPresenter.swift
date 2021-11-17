@@ -38,7 +38,7 @@ class DetailPresenter: ObservableObject {
             }.disposed(by: disposeBag)
     }
     
-    func addDetailRestaurant(of data: [RestaurantEntity]) {
+    func addDetailRestaurant(of data: RestaurantModel) {
         loadingState = true
         detailUseCase.addDetailRestaurant(of: data)
             .observe(on: MainScheduler.instance)
@@ -51,7 +51,7 @@ class DetailPresenter: ObservableObject {
             }.disposed(by: disposeBag)
     }
     
-    func deleteDetailRestaurant(of data: [RestaurantEntity]) {
+    func deleteDetailRestaurant(of data: RestaurantModel) {
         loadingState = true
         detailUseCase.deleteDetailRestaurant(of: data)
             .observe(on: MainScheduler.instance)

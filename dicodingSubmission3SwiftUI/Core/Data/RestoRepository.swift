@@ -13,8 +13,8 @@ protocol RestoRepositoryProtocol {
     func getRestaurants() -> Observable<[RestaurantModel]>
     func getDetailRestaurant(of id: String) -> Observable<RestaurantDetailModel>
     func getFavouriteRestaurant() -> Observable<[RestaurantModel]>
-    func addDetailRestaurant(of data: [RestaurantEntity]) -> Observable<Bool>
-    func deleteDetailRestaurant(of data: [RestaurantEntity]) -> Observable<Bool>
+    func addDetailRestaurant(of data: RestaurantModel) -> Observable<Bool>
+    func deleteDetailRestaurant(of data: RestaurantModel) -> Observable<Bool>
     func getSearchRestaurant(by title: String) -> Observable<[RestaurantModel]>
     
 }
@@ -54,12 +54,12 @@ extension RestoRepository: RestoRepositoryProtocol {
             .map { RestaurantsMapper.mapRestaurantEntitiesToDomains(input: $0) }
     }
     
-    func addDetailRestaurant(of data: [RestaurantEntity]) -> Observable<Bool> {
-        return self.locale.addRestaurants(of: data)
+    func addDetailRestaurant(of data: RestaurantModel) -> Observable<Bool> {
+        return self.locale.addRestaurants(of: RestaurantsMapper.mapRestaurantModelToEntities(input: data))
     }
     
-    func deleteDetailRestaurant(of data: [RestaurantEntity]) -> Observable<Bool> {
-        return self.locale.deleteRestaurant(of: data)
+    func deleteDetailRestaurant(of data: RestaurantModel) -> Observable<Bool> {
+        return self.locale.deleteRestaurant(of: RestaurantsMapper.mapRestaurantModelToEntities(input: data))
     }
     
     func getSearchRestaurant(by title: String) -> Observable<[RestaurantModel]> {
